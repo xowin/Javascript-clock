@@ -10,8 +10,15 @@ html, body{
 }
 
 .img-background{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  background-image: url('background.jpg');
+  background-size: cover;
+  z-index: -1;
 }
 
 h1{
@@ -24,6 +31,7 @@ h1{
   color: darkgrey;
   font-family: 'Oswald', sans-serif;
   letter-spacing: 5px;
+  text-shadow: black 2px 2px 2px;
 }
 
 #clock{
@@ -34,4 +42,15 @@ h1{
   text-align: center;
   font-family: 'Roboto', sans-serif;
   margin-top: 25%;
+  text-shadow: black 2px 4px 4px;
+}
+.date-section {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7); /* Adjust background color and opacity */
+  padding: 10px;
+  border-radius: 5px;
 }

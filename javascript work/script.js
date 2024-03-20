@@ -22,3 +22,24 @@ function realtimeClock() {
     hours + " : " + minutes + " : " + seconds + " " + amPm;
   var t = setTimeout(realtimeClock, 500);
 }
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('.container');
+  const dateElement = document.getElementById('currentDate');
+  let position = 0;
+
+  function moveBackground() {
+    position -= 1;
+    container.style.backgroundPosition = position + 'px 0';
+
+    // Update current date
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const month = currentDate.toLocaleString('default', { month: 'long' });
+    const year = currentDate.getFullYear();
+    dateElement.innerText = `Today is ${day} ${month} ${year}`;
+
+    requestAnimationFrame(moveBackground);
+  }
+
+  moveBackground();
+});
